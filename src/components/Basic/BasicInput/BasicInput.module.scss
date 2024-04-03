@@ -1,0 +1,17 @@
+@import "src/styles/imports.scss";
+
+.input {
+  width: 100%;
+
+  border-color: rgba(148, 148, 148, 1);
+
+  @include input();
+
+  &::placeholder {
+    @include placeholder();
+  }
+  &.disabled {
+    @include input-disabled();
+  }
+  @include focus-border();
+}

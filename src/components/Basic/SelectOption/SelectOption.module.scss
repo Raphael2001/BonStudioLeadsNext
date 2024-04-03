@@ -1,0 +1,22 @@
+@import "src/styles/imports.scss";
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: rem(40);
+  width: 100%;
+  padding-inline: rem(10);
+
+  border-bottom: #d3d3d3;
+  &.highlight {
+    background-color: $input-background-color;
+  }
+
+  .option-text {
+    font-size: rem(16);
+    .bold {
+      font-weight: 600;
+    }
+  }
+}

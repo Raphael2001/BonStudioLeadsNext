@@ -1,0 +1,22 @@
+@import "settings";
+
+.table-item {
+  &.blue {
+    background-color: #0f7aaf;
+  }
+  &.red {
+    background-color: $appleRed;
+  }
+  &.green {
+    background-color: #50c778;
+  }
+  &.yellow {
+    background-color: #e7c704;
+  }
+  &.purple {
+    background-color: #8963c6;
+  }
+  &.pink {
+    background-color: #fc93e8;
+  }
+}
