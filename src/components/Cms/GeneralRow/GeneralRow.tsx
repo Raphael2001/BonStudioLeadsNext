@@ -15,8 +15,9 @@ import styles from "./GeneralRow.module.scss";
 import useGeneralInfo from "utils/hooks/useGeneralInfo";
 import GeneralInfoInputTypes from "constants/GeneralInfoInputTypes";
 import { useAppSelector } from "utils/hooks/useRedux";
-import { LinkType } from "utils/types";
+
 import { copy } from "utils/functions";
+import { LinkType } from "utils/types/links";
 
 type Props = {
   name: string;
