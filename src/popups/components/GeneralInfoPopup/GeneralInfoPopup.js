@@ -13,7 +13,7 @@ import Api from "api/requests";
 
 const options = [
   {
-    id: "text",
+    _id: "text",
     text: "לא",
     value: "",
   },
@@ -29,7 +29,7 @@ function GeneralInfoPopup(props) {
 
   function onSubmit(formPayload) {
     const multiValuesId = formPayload.multiValues;
-    const option = options.find((o) => o.id === multiValuesId);
+    const option = options.find((o) => o._id === multiValuesId);
     const payload = {
       cmsTitle: formPayload.cmsTitle,
       value: option.value,
