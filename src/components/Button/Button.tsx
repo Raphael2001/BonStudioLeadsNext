@@ -15,10 +15,7 @@ function Button(props: Props) {
   const { className = "", onClick, title = "" } = props;
 
   return (
-    <button
-      className={clsx(styles["button"], styles[className])}
-      onClick={onClick}
-    >
+    <button className={clsx(styles["button"], className)} onClick={onClick}>
       {title}
     </button>
   );

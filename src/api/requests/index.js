@@ -240,6 +240,14 @@ class ApiRequests {
 
     return ApiManager.execute(props, API_METHODS.DELETE, "metaTags", onSuccess);
   };
+
+  sendLead = async (props = {}) => {
+    function onSuccess(res) {
+      typeof props.onSuccess === "function" && props.onSuccess(res.body);
+    }
+
+    return ApiManager.execute(props, API_METHODS.POST, "lead", onSuccess);
+  };
 }
 
 const Api = new ApiRequests();

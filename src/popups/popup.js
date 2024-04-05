@@ -16,6 +16,7 @@ import EditGeneralInfoPopup from "./components/EditGeneralInfoPopup/EditGeneralI
 import GeneralInfoPopup from "./components/GeneralInfoPopup/GeneralInfoPopup";
 import LinksPopup from "./components/LinksPopup/LinksPopup";
 import MetaTagsPopup from "./components/MetaTagsPopup/MetaTagsPopup";
+import LeadSentSuccess from "./components/LeadSentSuccess/LeadSentSuccess";
 
 export default function Popups() {
   const popupsArray = useSelector((store) => store.popupsArray);
@@ -61,6 +62,9 @@ export default function Popups() {
       ),
       [POPUP_TYPES.LINKS]: <LinksPopup key={key} payload={payload} />,
       [POPUP_TYPES.META_TAGS]: <MetaTagsPopup key={key} payload={payload} />,
+      [POPUP_TYPES.LEAD_SENT_SUCCESS]: (
+        <LeadSentSuccess key={key} payload={payload} />
+      ),
     };
 
     const popupToReturn =

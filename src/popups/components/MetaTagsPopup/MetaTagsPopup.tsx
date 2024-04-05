@@ -17,6 +17,7 @@ import { FormDataType } from "utils/types/form";
 import FORM_INPUTS_TYPES from "constants/form-inputs-types";
 import Api from "api/requests";
 import useNotificationsHandler from "utils/hooks/useNotificationsHandler";
+import Scrollbar from "components/ScrollBar/Scrollbar";
 
 function MetaTagsPopup(props) {
   const { payload = {} } = props;
@@ -38,7 +39,6 @@ function MetaTagsPopup(props) {
 
     if (id) {
       payload["id"] = id;
-      console.log("payload", payload);
 
       return Api.updateMetaTags({ payload, onSuccess });
     }
@@ -112,33 +112,35 @@ function MetaTagsPopup(props) {
     inputs,
     onSubmit,
     buttonText: id ? "עדכון" : "יצירה",
-    initialData: metaTagData,
+    initialData: useMemo(() => metaTagData, []),
   };
 
   return (
     <SlidePopup ref={ref} className={styles["meta-tags-popup"]}>
       <div className={styles["content"]}>
-        <FormCreator formData={formData}>
-          {fields.map((item: MetaTagRow) => {
-            return (
-              <MetaTagsInputsSelect
-                key={"inputs" + item.meta_tag_id}
-                id={item.meta_tag_id}
-                setFieldType={setFieldType}
-                setFieldValue={setFieldValue}
-                remove={removeById}
-                valueArray={fields}
+        <Scrollbar>
+          <FormCreator formData={formData}>
+            {fields.map((item: MetaTagRow) => {
+              return (
+                <MetaTagsInputsSelect
+                  key={"inputs" + item.meta_tag_id}
+                  id={item.meta_tag_id}
+                  setFieldType={setFieldType}
+                  setFieldValue={setFieldValue}
+                  remove={removeById}
+                  valueArray={fields}
+                />
+              );
+            })}
+            <div className={styles["actions"]}>
+              <CmsButton
+                title={"הוספת תגית חדשה"}
+                onClick={addNewMeta}
+                className="create"
               />
-            );
-          })}
-          <div className={styles["actions"]}>
-            <CmsButton
-              title={"הוספת תגית חדשה"}
-              onClick={addNewMeta}
-              className="create"
-            />
-          </div>
-        </FormCreator>
+            </div>
+          </FormCreator>
+        </Scrollbar>
       </div>
     </SlidePopup>
   );

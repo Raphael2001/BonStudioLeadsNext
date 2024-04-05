@@ -24,6 +24,10 @@ function FormCreator(props: Props) {
   const [form, setForm] = useState({});
 
   useEffect(() => {
+    resetForm();
+  }, [initialData, inputs]);
+
+  function resetForm() {
     const formData = {};
     if (Array.isArray(inputs)) {
       for (const key in inputs) {
@@ -42,7 +46,7 @@ function FormCreator(props: Props) {
       }
     }
     setForm(formData);
-  }, [initialData, inputs]);
+  }
 
   function onChange(name: string, value: string) {
     const newState = copy(form);
@@ -83,6 +87,7 @@ function FormCreator(props: Props) {
 
     if (formValid) {
       onSubmit(payload);
+      resetForm();
     }
   }
 

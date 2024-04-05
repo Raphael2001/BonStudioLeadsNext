@@ -5,8 +5,17 @@ import { serverProps, serverSettings } from "utils/types/api";
 const ServerApiManager = (function () {
   function addParamsToURL(url: string, payload: any) {
     let newURL = url;
-    for (let key in payload) {
-      newURL += `/${key}=${payload[key]}`;
+    const searchParams = new URLSearchParams();
+
+    // Loop through the object and append query parameters
+    for (const key in payload) {
+      searchParams.append(key, payload[key]);
+    }
+
+    const params = searchParams.toString();
+
+    if (payload && params) {
+      newURL += "?" + params;
     }
     return newURL;
   }
