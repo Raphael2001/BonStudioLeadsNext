@@ -24,9 +24,9 @@ function BannerHome(props: Props) {
 
         <h4 className={styles["address"]}>{texts.homeBanner_address_text}</h4>
 
-        <button className={styles["leave-details-btn"]}>
+        <a className={styles["leave-details-btn"]} href="#leads-form">
           {texts.leaveDetails_btn_text}
-        </button>
+        </a>
       </div>
     </section>
   );

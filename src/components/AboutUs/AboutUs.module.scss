@@ -1,6 +1,7 @@
 @import "src/styles/imports";
 .about-us-section {
   position: relative;
+
   background-color: $main-color;
 
   .wave {
@@ -27,8 +28,11 @@
     font-family: $font;
     margin-top: rem(20);
     padding-inline: rem(15);
+    padding-bottom: rem(40);
   }
-  padding-bottom: rem(40);
+  .wave-upside {
+    width: 100%;
+  }
 }
 
 @media (min-width: em($tablet)) {
@@ -55,36 +59,7 @@
     }
     .content {
       font-size: rem(18);
-
-      margin-top: 0;
-    }
-  }
-}
-
-@media (min-width: em($desktop_large)) {
-  .about-us-section {
-    .title {
-      font-size: rem(40);
-
-      top: rem(-60);
-    }
-    .content {
-      font-size: rem(18);
-
-      margin-top: 0;
-    }
-  }
-}
-
-@media (min-width: em($desktop_max)) {
-  .about-us-section {
-    .title {
-      font-size: rem(40);
-
-      top: rem(-60);
-    }
-    .content {
-      font-size: rem(18);
+      padding-inline: rem(40);
 
       margin-top: 0;
     }

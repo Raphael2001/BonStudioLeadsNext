@@ -1,0 +1,25 @@
+@import "src/styles/imports.scss";
+.button {
+  font-size: rem(16);
+  padding: rem(8) rem(20);
+  color: white;
+  background-color: $main-color;
+  border-radius: rem(30);
+  transition: 200ms all ease-in;
+  &:hover,
+  &:active {
+    background-color: darken($main-color, 10%);
+  }
+}
+
+@media (min-width: em($tablet)) {
+  .button {
+    font-size: rem(18);
+  }
+}
+
+@media (min-width: em($desktop)) {
+  .button {
+    font-size: rem(20);
+  }
+}

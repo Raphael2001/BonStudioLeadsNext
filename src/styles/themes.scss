@@ -11,7 +11,9 @@
   --cms-menu-item-active: white;
   --cms-choose-image-btn: #0f476f;
   --input-focus-color: #017aff;
-  --input-background-color: #e6f2ff;
+
+  --input-background-color: #{lighten(#017aff, 45%)};
+
   .input-icon-mark {
     @include recolor(#017aff);
   }
@@ -28,7 +30,7 @@
   --cms-menu-item: #3c4858;
   --cms-menu-item-active: white;
   --input-focus-color: #4caf50;
-  --input-background-color: #edf7ee;
+  --input-background-color: #{lighten(#4caf50, 45%)};
 
   .input-icon-mark {
     @include recolor(#4caf50);
@@ -50,4 +52,9 @@
   // }
   // --input-focus-color: #ff6d00;
   // --input-background-color: #fff0e6;
+}
+
+.leads-site {
+  --main-color: #7f544b;
+  --input-focus-color: var(--main-color);
 }

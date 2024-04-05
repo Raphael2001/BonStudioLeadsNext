@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 
       <head />
 
-      <body className="orange">
+      <body className="leads-site">
         <Providers>
           {children}
 

@@ -21,5 +21,5 @@ export default function MainCMSLayout({ children }) {
   }, []);
 
   //todo: make a loader here
-  return <>{initialRequestsDone ? children : null}</>;
+  return <div className="orange">{initialRequestsDone ? children : null}</div>;
 }

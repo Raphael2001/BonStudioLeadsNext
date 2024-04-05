@@ -1,10 +1,5 @@
 "use client";
-import React, {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useState,
-} from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 import styles from "./AboutUs.module.scss";
 
