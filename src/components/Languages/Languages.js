@@ -47,6 +47,7 @@ export default function Languages(props) {
   function onUpdate(item) {
     const langId = item._id;
     const langInput = tableInputs[langId];
+
     if (langInput) {
       const payload = { lang_id: langId, lang: langInput };
       Api.upsertLanguage({ payload, onSuccess: onSuccessNotification });
@@ -79,7 +80,7 @@ export default function Languages(props) {
       title: "ערך",
       type: TABLE_CELL_TYPES.INPUT,
       onChangeInput: onCellInputChange,
-      uniqueField: "id",
+      uniqueField: "_id",
     },
     actions: {
       title: "פעולות",
