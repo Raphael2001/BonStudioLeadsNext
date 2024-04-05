@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import styles from "./TextsPopup.module.scss";
 function TextsPopup(props) {
   const { keyProps = "" } = props.payload;
-  const languages = useSelector((store) => store.init?.language);
+  const languages = useSelector((store) => store.init?.languages);
   const texts = useSelector((store) => store.init?.texts);
   const ref = useRef();
 
@@ -36,9 +36,9 @@ function TextsPopup(props) {
   function getValueFromForm() {
     const value = {};
     for (const key in languages) {
-      const language = languages[key].value;
-      const { id } = language;
-      value[id] = form[id] || "";
+      const language = languages[key];
+      const { _id } = language;
+      value[_id] = form[_id] || "";
     }
     return value;
   }
@@ -61,6 +61,8 @@ function TextsPopup(props) {
     Api.updateText({ payload, onSuccess });
   }
 
+  console.log("languages", languages);
+
   return (
     <SlidePopup
       className={styles["texts-popup"]}
@@ -71,13 +73,14 @@ function TextsPopup(props) {
       <TextRow languageName={"מפתח"} value={key} onChange={onChangeKey} />
       {languages &&
         languages.map((languageData, index) => {
+          console.log("languageData", languageData);
           return (
             <TextRow
               key={"text-lang" + index}
-              languageName={languageData.value.lang}
-              value={form[languageData.value.id]}
+              languageName={languageData.lang}
+              value={form[languageData._id]}
               onChange={onChangeText}
-              id={languageData.value.id}
+              id={languageData._id}
             />
           );
         })}

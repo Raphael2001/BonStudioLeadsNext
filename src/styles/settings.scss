@@ -20,11 +20,11 @@ $appleYellow: #ffbd44;
 $appleGreen: #00ca4e;
 
 /* fonts */
-$font: "Heebo-Regular";
-$font-light: "Heebo-Light";
-$font-medium: "Heebo-Medium";
-$font-semibold: "Heebo-SemiBold";
-$font-bold: "Heebo-Bold";
+$font: "OpenSans-Regular";
+$font-light: "OpenSans-Light";
+$font-medium: "OpenSans-Medium";
+$font-semibold: "OpenSans-SemiBold";
+$font-bold: "OpenSans-Bold";
 
 /* break points */
 $mobile: 320;
@@ -74,3 +74,5 @@ $input-focus-color: var(--input-focus-color);
 $input-background-color: var(--input-background-color);
 
 /************* end *************/
+
+$main-color: #7f544b;

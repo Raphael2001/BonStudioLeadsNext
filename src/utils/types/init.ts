@@ -34,3 +34,7 @@ export type metaTag = {
   type: string;
   value: string;
 };
+
+export type Texts = {
+  [key: string]: string;
+};

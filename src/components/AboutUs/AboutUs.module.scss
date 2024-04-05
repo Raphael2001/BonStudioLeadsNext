@@ -1,0 +1,92 @@
+@import "src/styles/imports";
+.about-us-section {
+  position: relative;
+  background-color: $main-color;
+
+  .wave {
+    position: absolute;
+
+    width: 100%;
+    opacity: 0;
+    transition: 300ms opacity ease-in;
+    &.in {
+      opacity: 1;
+    }
+  }
+  .title {
+    color: white;
+    font-size: rem(30);
+    position: relative;
+    top: rem(-7);
+    text-align: center;
+    font-family: $font-medium;
+  }
+  .content {
+    font-size: rem(14);
+    color: white;
+    font-family: $font;
+    margin-top: rem(20);
+    padding-inline: rem(15);
+  }
+  padding-bottom: rem(40);
+}
+
+@media (min-width: em($tablet)) {
+  .about-us-section {
+    .title {
+      font-size: rem(40);
+
+      top: rem(-15);
+    }
+    .content {
+      font-size: rem(18);
+
+      margin-top: rem(15);
+    }
+  }
+}
+
+@media (min-width: em($desktop)) {
+  .about-us-section {
+    .title {
+      font-size: rem(40);
+
+      top: rem(-60);
+    }
+    .content {
+      font-size: rem(18);
+
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: em($desktop_large)) {
+  .about-us-section {
+    .title {
+      font-size: rem(40);
+
+      top: rem(-60);
+    }
+    .content {
+      font-size: rem(18);
+
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: em($desktop_max)) {
+  .about-us-section {
+    .title {
+      font-size: rem(40);
+
+      top: rem(-60);
+    }
+    .content {
+      font-size: rem(18);
+
+      margin-top: 0;
+    }
+  }
+}
