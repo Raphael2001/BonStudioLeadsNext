@@ -5,12 +5,23 @@ import AboutUs from "components/AboutUs/AboutUs";
 import Header from "components/Header/Header";
 import LeadsForm from "components/LeadsForm/LeadsForm";
 import Wave from "/public/assets/waves/wave-upsidedown.svg";
+import { Metadata } from "next";
 
 async function init() {
   const res = await ApiServer.init({});
   const json = await res.json();
 
   return json;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const payload = { route: "/", lang_id: "he" };
+
+  const res = await ApiServer.metaTags({ payload });
+  const json = await res.json();
+  const body = json.body;
+
+  return body;
 }
 
 export default async function Home() {

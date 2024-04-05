@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import basic from "./Scrollbar.module.scss";
 
 type Props = {
-  extraStyles: any;
+  extraStyles?: any;
   children: React.ReactElement;
-  className: string;
+  className?: string;
 };
 
 function Scrollbar({ extraStyles = {}, children, className = "" }: Props) {
@@ -37,6 +37,7 @@ function Scrollbar({ extraStyles = {}, children, className = "" }: Props) {
   const handleScrollContent = () => {
     const thumbEle = thumbRef.current;
     const contentEle = contentContainerRef.current;
+
     if (!thumbEle || !contentEle) {
       return;
     }

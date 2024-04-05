@@ -8,13 +8,28 @@ import FormCreator from "components/FormCreator/FormCreator";
 import { FormDataType } from "utils/types/form";
 import FORM_INPUTS_TYPES from "constants/form-inputs-types";
 import Button from "components/Button/Button";
+import Api from "api/requests";
+import usePopup from "utils/hooks/usePopup";
+import POPUP_TYPES from "constants/popup-types";
 
 type Props = {
   texts: Texts;
 };
 
 function LeadsForm({ texts }: Props) {
-  function onSubmit(payload) {}
+  const openPopup = usePopup();
+  function onSubmit(payload: any) {
+    Api.sendLead({ payload, onSuccess });
+
+    function onSuccess() {
+      openPopup(POPUP_TYPES.LEAD_SENT_SUCCESS, {
+        title: texts.leadSentSuccess_title,
+        name: payload.fullname,
+        content: texts.leadSentSuccess_content,
+        btnText: texts.leadSentSuccess_btnText,
+      });
+    }
+  }
 
   const formData: FormDataType = {
     inputs: [
