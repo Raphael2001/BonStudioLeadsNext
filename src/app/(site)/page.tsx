@@ -6,6 +6,7 @@ import Header from "components/Header/Header";
 import LeadsForm from "components/LeadsForm/LeadsForm";
 import Wave from "/public/assets/waves/wave-upsidedown.svg";
 import { Metadata } from "next";
+import MetaTagsData from "components/MetaTagsData/MetaTagsData";
 
 async function init() {
   const res = await ApiServer.init({});
@@ -32,14 +33,17 @@ export default async function Home() {
   const texts = body.texts;
 
   return (
-    <main className={styles.main}>
-      <Header logo={body.logo} />
-      <BannerHome media={body.homeBanner} texts={texts} />
-      <AboutUs texts={texts} />
-      <div className={styles["wave"]}>
-        <img src={Wave.src} alt="wave" />
-      </div>
-      <LeadsForm texts={texts} />
-    </main>
+    <>
+      <MetaTagsData />
+      <main className={styles.main}>
+        <Header logo={body.logo} />
+        <BannerHome media={body.homeBanner} texts={texts} />
+        <AboutUs texts={texts} />
+        <div className={styles["wave"]}>
+          <img src={Wave.src} alt="wave" />
+        </div>
+        <LeadsForm texts={texts} />
+      </main>
+    </>
   );
 }
