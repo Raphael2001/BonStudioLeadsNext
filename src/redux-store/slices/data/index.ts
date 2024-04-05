@@ -211,20 +211,6 @@ Slices.push(burgerSlice);
 
 /* --------------------------------------------------------------- */
 
-export const cmsLoginFromSlice = createSlice({
-  name: "cmsLoginForm",
-  initialState: {},
-  reducers: {
-    updateCmsLoginForm: (state, action) => {
-      return { ...state, ...action.payload };
-    },
-  },
-});
-Slices.push(cmsLoginFromSlice);
-/* --------------------------------------------------------------- */
-
-/* --------------------------------------------------------------- */
-
 export const userDataSlice = createSlice({
   name: "userData",
   initialState: {},

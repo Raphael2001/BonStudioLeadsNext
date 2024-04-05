@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { ComponentType, useEffect, useState } from "react";
 
 import styles from "./FormCreator.module.scss";
 import InputsCreator from "./InputsCreator/InputsCreator";
@@ -12,10 +12,11 @@ import { copy } from "utils/functions";
 type Props = {
   formData: FormDataType;
   children?: React.ReactNode;
+  CustomButton?: ComponentType<any>;
 };
 
 function FormCreator(props: Props) {
-  const { formData, children } = props;
+  const { formData, children, CustomButton } = props;
   const { inputs, buttonText, onSubmit, initialData } = formData;
 
   const [firstTry, setFirstTry] = useState(true);
@@ -103,11 +104,15 @@ function FormCreator(props: Props) {
         return null;
       })}
       {children && children}
-      <CmsButton
-        title={buttonText}
-        className={"create"}
-        onClick={onSubmitHandler}
-      />
+      {CustomButton ? (
+        <CustomButton title={buttonText} onClick={onSubmitHandler} />
+      ) : (
+        <CmsButton
+          title={buttonText}
+          className={"create"}
+          onClick={onSubmitHandler}
+        />
+      )}
     </div>
   );
 }

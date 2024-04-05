@@ -7,9 +7,7 @@ input {
     border-color: inherit;
     outline: none;
   }
-  &::-webkit-autofill {
-    box-shadow: 0 0 0 30px #ffffff inset;
-  }
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -18,7 +16,10 @@ input {
     -moz-appearance: textfield;
   }
   &:-webkit-autofill {
-    box-shadow: 0 0 0 30px #ffffff inset;
+    box-shadow: 0 0 0 0px transparent inset;
+  }
+  &:-internal-autofill-selected {
+    background-color: transparent !important;
   }
 }
 

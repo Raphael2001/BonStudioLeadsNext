@@ -113,7 +113,13 @@ function InputsCreator(props: Props) {
       );
 
     case FORM_INPUTS_TYPES.ANIMATED_INPUT:
-      return <AnimatedInput {...sharedInputProps} onChange={onChangeInput} />;
+      return (
+        <AnimatedInput
+          {...sharedInputProps}
+          onChange={onChangeInput}
+          type={type}
+        />
+      );
 
     case FORM_INPUTS_TYPES.TEXT_AREA:
       return (

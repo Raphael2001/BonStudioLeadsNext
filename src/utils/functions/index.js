@@ -79,3 +79,11 @@ export function copy(item) {
   }
   return item;
 }
+
+export function clsx() {
+  const argsArray = Array.from(arguments);
+
+  const filteredArgs = argsArray.filter((arg) => arg);
+
+  return filteredArgs.join(" ");
+}
