@@ -1,8 +1,8 @@
-import { GeneralInfo } from "utils/types";
 import { useAppSelector } from "./useRedux";
 import Api from "api/requests";
 import useNotificationsHandler from "./useNotificationsHandler";
 import { copy } from "utils/functions";
+import { GeneralInfo } from "utils/types/init";
 
 export default function useGeneralInfo(name: string) {
   const { onSuccessNotification } = useNotificationsHandler();

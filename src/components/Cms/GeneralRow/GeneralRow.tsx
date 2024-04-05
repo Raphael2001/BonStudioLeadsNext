@@ -69,21 +69,25 @@ function RenderInputs(props: inputsProps) {
 
   const convertValueToMedia = useCallback(() => {
     const array: Array<any> = [];
-    for (const key in value) {
-      const id = value[key];
-      const mediaObj = media[id];
-      array.push(mediaObj);
+    if (Array.isArray(value)) {
+      for (const key in value) {
+        const id = value[key];
+        const mediaObj = media[id];
+        array.push(mediaObj);
+      }
     }
     return array;
   }, [media, value]);
 
   const convertValueToLinks = useCallback(() => {
     const array: Array<any> = [];
-    for (const key in value) {
-      const id = value[key];
+    if (Array.isArray(value)) {
+      for (const key in value) {
+        const id = value[key];
 
-      const linkObj = links.find((l: LinkType) => l._id === id);
-      array.push(linkObj);
+        const linkObj = links.find((l: LinkType) => l._id === id);
+        array.push(linkObj);
+      }
     }
     return array;
   }, [media, value]);

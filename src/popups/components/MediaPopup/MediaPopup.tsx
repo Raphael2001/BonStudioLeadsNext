@@ -28,24 +28,22 @@ export default function MediaPopup() {
   function onMediaChange(e: inputEvent) {
     const fileList = e.target.files;
     if (fileList) {
-      let file: File = null;
-
       for (let i = 0; i < fileList.length; i++) {
         if (
           fileList[i].type.match(/^image\//) ||
           fileList[i].type.match(/^video\//)
         ) {
-          file = fileList[i];
-          break;
+          const file = fileList[i];
+          if (file !== null) {
+            const url = URL.createObjectURL(file);
+            getBase64(file, (result) => {
+              setBase64(result);
+            });
+            setMediaType(file.type.split("/")[0]);
+            setCurrentMedia(url);
+          }
+          return;
         }
-      }
-      if (file !== null) {
-        const url = URL.createObjectURL(file);
-        getBase64(file, (result) => {
-          setBase64(result);
-        });
-        setMediaType(file.type.split("/")[0]);
-        setCurrentMedia(url);
       }
     }
   }

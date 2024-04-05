@@ -9,6 +9,7 @@ import { inputEvent } from "utils/types/inputs";
 import CmsButton from "components/CmsButton/CmsButton";
 import Api from "api/requests";
 import useGeneralInfo from "utils/hooks/useGeneralInfo";
+import { SlidePopupRef } from "utils/types/popup";
 
 type Props = {
   payload: Payload;
@@ -19,11 +20,10 @@ type Payload = {
 
 function EditGeneralInfoPopup({ payload }: Props) {
   const { name } = payload;
-  const ref = useRef();
+  const ref = useRef<SlidePopupRef>();
   const [currentValue, setCurrentValue] = useState("");
 
-  const { value, cmsTitle, removeItemByIndex, upsertGeneralInfo } =
-    useGeneralInfo(name);
+  const { value, cmsTitle, upsertGeneralInfo } = useGeneralInfo(name);
 
   useEffect(() => {
     setCurrentValue(cmsTitle);

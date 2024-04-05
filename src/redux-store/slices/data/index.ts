@@ -174,7 +174,7 @@ export const notificationsSlice = createSlice({
       state: notification[],
       action: PayloadAction<string>
     ) => {
-      return state.filter((item) => item.payload.id !== action.payload);
+      state.filter((item) => item.payload.id !== action.payload);
     },
   },
 });
