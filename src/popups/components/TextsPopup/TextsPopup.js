@@ -7,6 +7,7 @@ import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./TextsPopup.module.scss";
+import AutoGrowTextArea from "components/forms/AutoGrowTextArea/AutoGrowTextArea";
 function TextsPopup(props) {
   const { keyProps = "" } = props.payload;
   const languages = useSelector((store) => store.init?.languages);
@@ -116,7 +117,7 @@ function TextRow(props) {
     <div className={styles["text-row"]}>
       <span className={styles["language-name"]}> {languageName}</span>
       <div className={styles["input-wrapper"]}>
-        <input
+        <AutoGrowTextArea
           value={value}
           onChange={onChange}
           name={id}

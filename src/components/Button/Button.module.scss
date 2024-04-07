@@ -6,6 +6,8 @@
   background-color: $main-color;
   border-radius: rem(30);
   transition: 200ms all ease-in;
+  font-family: $font;
+
   &:hover,
   &:active {
     background-color: darken($main-color, 10%);
