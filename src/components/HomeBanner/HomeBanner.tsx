@@ -19,10 +19,9 @@ function BannerHome(props: Props) {
       <div className={styles["top-banner-media-overlay"]}>
         <div className={styles["titles"]}>
           <h1 className={styles["title"]}>{texts.homeBanner_title}</h1>
-          <h2 className={styles["subtitle"]}>{texts.homeBanner_subtitle}</h2>
         </div>
 
-        <h4 className={styles["address"]}>{texts.homeBanner_address_text}</h4>
+        <h2 className={styles["address"]}>{texts.homeBanner_address_text}</h2>
 
         <a className={styles["leave-details-btn"]} href="#leads-form">
           {texts.leaveDetails_btn_text}
