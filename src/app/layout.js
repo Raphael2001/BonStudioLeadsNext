@@ -2,6 +2,7 @@ import "styles/globals.scss";
 import Providers from "components/Providers/Providers";
 import Popups from "popups/popup";
 import Notifications from "components/Notifications/notifications";
+import ScreenLoader from "components/ScreenLoader/ScreenLoader";
 
 export default function RootLayout({ children }) {
   const fonts = ["Regular", "Medium", "SemiBold", "Bold", "Light"];
@@ -25,12 +26,13 @@ export default function RootLayout({ children }) {
 
       <head />
 
-      <body className="leads-site">
+      <body className="">
         <Providers>
           {children}
 
           <Popups />
           <Notifications />
+          <ScreenLoader />
         </Providers>
       </body>
     </html>

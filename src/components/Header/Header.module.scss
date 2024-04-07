@@ -1,17 +1,24 @@
 @import "src/styles/imports";
+$header-height: 85;
 .header {
   width: 100%;
 
   z-index: 999;
   position: relative;
+  height: rem($header-height);
+  background-color: $main-color;
+
   .header-content {
     position: fixed;
-    background-color: $main-color;
     width: 100%;
+    background-color: $main-color;
+    display: flex;
+    align-items: center;
+    height: rem($header-height);
 
     top: 0;
     left: 0;
-    padding: rem(10) rem(20);
+    padding: 0 rem(20);
 
     .logo {
       width: rem(60);
