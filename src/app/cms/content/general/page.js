@@ -9,9 +9,18 @@ import Languages from "components/Languages/Languages";
 import GeneralRow from "components/Cms/GeneralRow/GeneralRow";
 import usePopup from "utils/hooks/usePopup";
 import POPUP_TYPES from "constants/popup-types";
+import useNotificationsHandler from "utils/hooks/useNotificationsHandler";
 export default function GeneralPage() {
   const generalInfo = useSelector((store) => store.init?.generalInfo);
   const openPopup = usePopup();
+  const { onSuccessNotification } = useNotificationsHandler();
+  function revildateSite() {
+    fetch("/api/revalidate")
+      .then((res) => res.json())
+      .then((res) => {
+        onSuccessNotification();
+      });
+  }
 
   return (
     <div className={styles["general-info-wrapper"]}>
@@ -27,6 +36,14 @@ export default function GeneralPage() {
         Object.values(generalInfo).map((param) => {
           return <GeneralRow key={param._id} name={param.name} />;
         })}
+
+      <div className={styles["revildate-site-btn"]}>
+        <CmsButton
+          className={"update"}
+          title={"עדכן את האתר"}
+          onClick={revildateSite}
+        />
+      </div>
     </div>
   );
 }

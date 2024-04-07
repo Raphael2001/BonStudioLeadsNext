@@ -10,13 +10,14 @@
   }
   &.animated {
     transform: translate(0, rem(-16)) scale(0.9);
+    right: rem(-2);
   }
 }
 
 @media (min-width: em($desktop)) {
   .placeholder {
     &.animated {
-      transform: translate(0, rem(-20));
+      transform: translate(0, rem(-20)) scale(0.9);
     }
   }
 }
