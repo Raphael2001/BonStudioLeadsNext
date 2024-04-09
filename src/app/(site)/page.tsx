@@ -7,6 +7,7 @@ import LeadsForm from "components/LeadsForm/LeadsForm";
 import Wave from "/public/assets/waves/wave-upsidedown.svg";
 import { Metadata } from "next";
 import MetaTagsData from "components/MetaTagsData/MetaTagsData";
+import Footer from "components/Footer/Footer";
 
 async function init() {
   const res = await ApiServer.init({});
@@ -43,6 +44,7 @@ export default async function Home() {
           <img src={Wave.src} alt="wave" />
         </div>
         <LeadsForm texts={texts} />
+        <Footer />
       </main>
     </>
   );
