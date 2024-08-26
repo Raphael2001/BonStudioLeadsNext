@@ -1,34 +1,15 @@
-@font-face {
-  font-family: "OpenSans-Regular";
-  src: url("/assets/fonts/OpenSans-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
+@import "./mixins.scss";
 
-@font-face {
-  font-family: "OpenSans-Medium";
-  src: url("/assets/fonts/OpenSans-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
+$font-name: "Heebo";
 
-@font-face {
-  font-family: "OpenSans-SemiBold";
-  src: url("/assets/fonts/OpenSans-SemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
+$fontVariations: (
+  Regular: "/assets/fonts/#{$font-name}-Regular",
+  Medium: "/assets/fonts/#{$font-name}-Medium",
+  SemiBold: "/assets/fonts/#{$font-name}-SemiBold",
+  Bold: "/assets/fonts/#{$font-name}-Bold",
+  Light: "/assets/fonts/#{$font-name}-Light",
+);
 
-@font-face {
-  font-family: "OpenSans-Bold";
-  src: url("/assets/fonts/OpenSans-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "OpenSans-Light";
-  src: url("/assets/fonts/OpenSans-Light.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
+@each $weight, $path in $fontVariations {
+  @include font-face("#{$font-name}-#{$weight}", normal, $path);
 }

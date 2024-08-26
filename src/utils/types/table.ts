@@ -8,11 +8,14 @@ export interface TableAction {
 }
 
 export interface TableColorCell {
-  [key: string]: {
-    color: string;
-    title: string;
-  };
+  [key: string]: TableColorCellOption;
 }
+
+export type TableColorCellOption = {
+  color: string;
+  title: string;
+  id: string | boolean;
+};
 
 export interface cellInput {
   value: string | number;
@@ -28,8 +31,20 @@ export interface TableHeaderItem {
   onChangeCheckbox?: (value: onChangeCheckboxValue) => void;
   actions?: Array<TableAction>;
   onChangeInput?: (e: cellInput) => void;
+  dataset?: Array<datasetItem>;
+  displayField?: string;
+  onOptionClick?: TableColorCellOptionClick;
 }
+
+type datasetItem = {
+  _id: string;
+};
 
 export interface TableHeader {
   [key: string]: TableHeaderItem;
 }
+
+export type TableColorCellOptionClick = (
+  id: string,
+  item: TableColorCellOption
+) => void;

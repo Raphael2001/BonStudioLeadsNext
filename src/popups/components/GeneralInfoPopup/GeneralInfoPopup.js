@@ -47,7 +47,7 @@ function GeneralInfoPopup(props) {
     inputs: [
       {
         name: "name",
-        rules: ["not_empty", "generalInfoName"],
+        rules: ["not_empty", ["alphanumeric", 2]],
         label: "שם השדה (אנגלית בלבד)",
         inputType: FORM_INPUTS_TYPES.INPUT,
       },
@@ -67,20 +67,22 @@ function GeneralInfoPopup(props) {
       {
         name: "multiValues",
         rules: ["not_empty"],
-        label: "ערך מרובה",
+        label: "ערך מרובה (לא רלוונטי לטקסט מתחלף)",
         inputType: FORM_INPUTS_TYPES.RADIO,
         options: options,
         field: "text",
       },
     ],
-    buttonText: "יצירה",
-    onSubmit: onSubmit,
   };
 
   return (
     <SlidePopup className={styles["general-info-popup"]} ref={ref}>
       <div className={styles["content"]}>
-        <FormCreator formData={formData} buttonText={""} />
+        <FormCreator
+          formData={formData}
+          buttonText={"יצירה"}
+          onSubmit={onSubmit}
+        />
       </div>
     </SlidePopup>
   );

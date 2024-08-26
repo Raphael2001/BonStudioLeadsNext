@@ -17,8 +17,8 @@ const META_TAGS_TYPES = {
   "OG:SITENAME": {
     _id: "openGraph:siteName",
   },
-  "OG:IMAGES:URL": {
-    _id: "openGraph:images:url",
+  "OG:IMAGES": {
+    _id: "openGraph:images",
   },
 };
 export default META_TAGS_TYPES;

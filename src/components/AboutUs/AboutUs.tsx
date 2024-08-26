@@ -4,15 +4,15 @@ import React, { useLayoutEffect, useState } from "react";
 import styles from "./AboutUs.module.scss";
 
 import Wave from "/public/assets/waves/wave.svg";
-import { Texts } from "utils/types/init";
+
 import { clsx } from "utils/functions";
+import useTranslate from "utils/hooks/useTranslate";
+import AppText from "components/AppText/AppText";
 
-type Props = {
-  texts: Texts;
-};
-
-function AboutUs({ texts }: Props) {
+function AboutUs() {
   const [top, setTop] = useState(0);
+
+  const translate = useTranslate();
 
   useLayoutEffect(() => {
     getTop();
@@ -25,7 +25,7 @@ function AboutUs({ texts }: Props) {
 
   function getTop() {
     const sceenWidth = window.innerWidth;
-    setTop(-sceenWidth / 5);
+    setTop(-sceenWidth / 4.5);
   }
 
   return (
@@ -37,8 +37,11 @@ function AboutUs({ texts }: Props) {
         <img src={Wave.src} alt="wave" />
       </div>
 
-      <h6 className={styles["title"]}>{texts.aboutUs_title}</h6>
-      <p className={styles["content"]}>{texts.aboutUs_content}</p>
+      <AppText className={styles["title"]} value={translate("aboutUs_title")} />
+      <AppText
+        className={styles["content"]}
+        value={translate("aboutUs_content")}
+      />
     </div>
   );
 }

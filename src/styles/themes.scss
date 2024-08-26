@@ -1,18 +1,21 @@
 @import "mixins";
 :root {
-  --cms-menu-background: #6ea5ce;
-  --cms-menu-title: #223e45;
-  --cms-menu-divider: #2c698f;
-  --cms-active-menu-tab-background: #2c698f;
-  --cms-active-menu-tab-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
-    0 7px 10px -5px rgba(57, 168, 201, 0.4);
-  --cms-header-background: grey;
-  --cms-menu-item: white;
-  --cms-menu-item-active: white;
-  --cms-choose-image-btn: #0f476f;
   --input-focus-color: #017aff;
-
   --input-background-color: #{lighten(#017aff, 45%)};
+
+  --cms-basic-white: #fffff0;
+
+  --cms-main-color: #2c698f;
+  --cms-main-light-color: #{lighten(#2c698f, 60%)};
+  --cms-main-min-light-color: #{lighten(#2c698f, 55%)};
+
+  --cms-secondary-color: #{lighten(#2c698f, 25%)};
+
+  --font: "Heebo-Regular";
+  --font-light: "Heebo-Light";
+  --font-medium: "Heebo-Medium";
+  --font-semibold: "Heebo-SemiBold";
+  --font-bold: "Heebo-Bold";
 
   .input-icon-mark {
     @include recolor(#017aff);
@@ -20,41 +23,36 @@
 }
 
 .green {
-  --cms-menu-background: #e5ebe5;
-  --cms-menu-title: #3c4858;
-  --cms-menu-divider: rgba(180, 180, 180, 0.3);
-  --cms-active-menu-tab-background: #4caf50;
-  --cms-active-menu-tab-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
-    0 7px 10px -5px rgba(76, 175, 80, 0.4);
-  --cms-header-background: grey;
-  --cms-menu-item: #3c4858;
-  --cms-menu-item-active: white;
   --input-focus-color: #4caf50;
+
   --input-background-color: #{lighten(#4caf50, 45%)};
+
+  --cms-main-color: #4caf50;
+  --cms-secondary-color: #{lighten(#4caf50, 25%)};
+
+  --cms-main-light-color: #{lighten(#4caf50, 47%)};
+  --cms-main-min-light-color: #{lighten(#4caf50, 40%)};
 
   .input-icon-mark {
     @include recolor(#4caf50);
   }
 }
 .orange {
-  --cms-menu-background: #ffe0b2;
-  --cms-menu-title: #3c4858;
-  --cms-menu-divider: #ff9800;
-  --cms-active-menu-tab-background: #ff6d00;
-  --cms-active-menu-tab-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
-    0 7px 10px -5px rgba(192, 87, 13, 0.4);
-  --cms-header-background: grey;
-  --cms-menu-item: #263238;
-  --cms-menu-item-active: white;
-  --cms-choose-image-btn: #ff6d00;
-  // .input-icon-mark {
-  //   @include recolor(#ff6d00);
-  // }
-  // --input-focus-color: #ff6d00;
-  // --input-background-color: #fff0e6;
+  --input-focus-color: #ff6d00;
+  --input-background-color: #{lighten(#ff6d00, 45%)};
+
+  --cms-main-color: #ff6d00;
+
+  --cms-secondary-color: #{lighten(#ff6d00, 25%)};
+  --cms-main-light-color: #{lighten(#ff6d00, 47%)};
+  --cms-main-min-light-color: #{lighten(#ff6d00, 40%)};
+
+  .input-icon-mark {
+    @include recolor(#ff6d00);
+  }
 }
 
-.leads-site {
+.site {
   --main-color: #7f544b;
   --input-focus-color: var(--main-color);
 }

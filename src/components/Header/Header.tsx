@@ -1,17 +1,17 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 import styles from "./Header.module.scss";
-import { Media } from "utils/types/media";
-import SmartMedia from "components/SmartMedia/SmartMedia";
-type Props = {
-  logo: Media;
-};
 
-function Header({ logo }: Props) {
+import SmartMedia from "components/SmartMedia/SmartMedia";
+import { useAppSelector } from "utils/hooks/useRedux";
+
+function Header() {
+  const logo = useAppSelector((store) => store.initApp.logo);
   return (
     <header className={styles["header"]}>
       <div className={styles["header-content"]}>
-        <SmartMedia className={styles["logo"]} item={logo} />
+        <SmartMedia item={logo} skeletonClassName={styles["logo"]} />
       </div>
     </header>
   );

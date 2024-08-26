@@ -3,10 +3,11 @@ import CmsButton from "components/CmsButton/CmsButton";
 import styles from "./GeneralInfoActions.module.scss";
 import useGeneralInfo from "utils/hooks/useGeneralInfo";
 import { copy } from "utils/functions";
+import { generalInfoValue } from "utils/types/init";
 
 type actionsProps = {
   name: string;
-  inputValue: string | Array<any>;
+  inputValue: generalInfoValue;
   resetValue: () => void;
 };
 
@@ -32,17 +33,9 @@ export default function GeneralInfoActions({
   return (
     <div className={styles["actions"]}>
       {multiValues ? (
-        <CmsButton
-          title={"הוספה"}
-          className="create"
-          onClick={updateMultiValues}
-        />
+        <CmsButton text={"הוספה"} onClick={updateMultiValues} color="blue" />
       ) : (
-        <CmsButton
-          title={"עדכון"}
-          className="update"
-          onClick={updateSingleValue}
-        />
+        <CmsButton text={"עדכון"} onClick={updateSingleValue} color="green" />
       )}
     </div>
   );

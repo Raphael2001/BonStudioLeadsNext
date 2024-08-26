@@ -3,8 +3,8 @@
 .input {
   width: 100%;
 
-  border-color: rgba(148, 148, 148, 1);
-  direction: rtl;
+  border-color: $grey;
+
   @include input();
 
   &::placeholder {

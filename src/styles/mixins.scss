@@ -1,29 +1,5 @@
 @import "./settings.scss";
 @import "./functions.scss";
-@mixin cmsButton($color) {
-  transition: all 500ms ease-in-out;
-  border: 1px solid $color;
-  color: black;
-  border-radius: 5px;
-  background-color: transparent;
-  &:hover {
-    background-color: $color;
-    border: none;
-    color: white;
-  }
-}
-
-@mixin cmsButtonRed {
-  @include cmsButton($cmsRed);
-}
-
-@mixin cmsButtonBlue {
-  @include cmsButton($cmsBlue);
-}
-
-@mixin cmsButtonGreen {
-  @include cmsButton($cmsGreen);
-}
 
 @mixin hideScrollbar() {
   -ms-overflow-style: none;
@@ -62,7 +38,7 @@
 
 @mixin placeholder() {
   color: $grey;
-  font-family: "Arial";
+  font-family: $font;
   font-size: rem(16);
 
   @media (min-width: em($desktop)) {
@@ -70,9 +46,17 @@
   }
 }
 
+@mixin placeholder-focus() {
+  font-size: rem(14);
+
+  @media (min-width: em($desktop)) {
+    font-size: rem(18);
+  }
+}
+
 @mixin input() {
   color: black;
-  font-family: "Arial";
+  font-family: $font;
   font-size: rem(16);
   background-color: transparent;
 
@@ -90,4 +74,61 @@
 @mixin input-disabled() {
   opacity: 0.4;
   pointer-events: none;
+}
+
+@mixin font-face($font-family, $font-style, $font-path) {
+  @font-face {
+    font-family: $font-family;
+    src: url("#{$font-path}.ttf") format("truetype");
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+@mixin text-shadow() {
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+@mixin multi-inputs-placeholder() {
+  font-size: rem(18);
+  font-family: $font;
+}
+
+@mixin input-text() {
+  font-size: rem(14);
+
+  font-family: $font-light;
+}
+
+@mixin glass-effect($color, $opacity: 0.57) {
+  background-color: rgba($color, $opacity);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba($color, $opacity);
+}
+
+@mixin left($value) {
+  :global(.rtl) & {
+    left: $value;
+    right: unset;
+  }
+
+  :global(.ltr) & {
+    right: $value;
+    left: unset;
+  }
+}
+
+@mixin right($value) {
+  :global(.rtl) & {
+    right: $value;
+    left: unset;
+  }
+
+  :global(.ltr) & {
+    left: $value;
+    right: unset;
+  }
 }

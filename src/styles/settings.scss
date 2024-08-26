@@ -7,7 +7,8 @@ $text-color: #000000;
 $grey-divider: #e7e8e4;
 $dark-grey: #565555;
 $text-black: #0c0803;
-$grey: #9fa0a4;
+$mid-dark-grey: #707173;
+$grey: #595959;
 
 $cmsRed: #d63646;
 $cmsBlue: #0f476f;
@@ -19,12 +20,27 @@ $appleRed: #ff605c;
 $appleYellow: #ffbd44;
 $appleGreen: #00ca4e;
 
+$basic-color-blue: #0f7aaf;
+$basic-color-red: $appleRed;
+$basic-color-green: #50c778;
+$basic-color-yellow: #e7c704;
+$basic-color-purple: #8963c6;
+$basic-color-orange: #ea580b;
+$basic-color-pink: #fc93e8;
+
+$button-color-default: #341be6;
+$button-color-success: #16a349;
+$button-color-info: #0084c7;
+$button-color-warning: #ea580b;
+$button-color-help: #9333e9;
+$button-color-danger: #dc2625;
+
 /* fonts */
-$font: "OpenSans-Regular";
-$font-light: "OpenSans-Light";
-$font-medium: "OpenSans-Medium";
-$font-semibold: "OpenSans-SemiBold";
-$font-bold: "OpenSans-Bold";
+$font: var(--font);
+$font-light: var(--font-light);
+$font-medium: var(--font-medium);
+$font-semibold: var(--font-semibold);
+$font-bold: var(--font-bold);
 
 /* break points */
 $mobile: 320;
@@ -47,32 +63,23 @@ $background-color-login: linear-gradient(
 );
 /************* end *************/
 
-/************* cms menu *************/
-
-$cms-menu-background: var(--cms-menu-background);
-$cms-menu-title: var(--cms-menu-title);
-$cms-menu-divider: var(--cms-menu-divider);
-$cms-active-menu-tab-background: var(--cms-active-menu-tab-background);
-$cms-active-menu-tab-box-shadow: var(--cms-active-menu-tab-box-shadow);
-
-$cms-header-background: var(--cms-header-background);
-
-$cms-menu-item: var(--cms-menu-item);
-$cms-menu-item-active: var(--cms-menu-item-active);
+/************* cms main *************/
+$cms-basic-white: var(--cms-basic-white);
+$cms-main-color: var(--cms-main-color);
+$cms-secondary-color: var(--cms-secondary-color);
+$cms-main-light-color: var(--cms-main-light-color);
+$cms-main-min-light-color: var(--cms-main-min-light-color);
 
 /************* end *************/
 
-/************* cms add new image *************/
-
-$cms-choose-image-btn: var(--cms-choose-image-btn);
-
-/************* end *************/
-
-/************* input *************/
+/************* inputs *************/
 
 $input-focus-color: var(--input-focus-color);
 $input-background-color: var(--input-background-color);
 
 /************* end *************/
+
+$menu-item-blue-color: #7cb9e8;
+$button-color-default: darken(#7cb9e8, 20);
 
 $main-color: #7f544b;
