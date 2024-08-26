@@ -1,7 +1,7 @@
 @import "src/styles/imports.scss";
 .placeholder {
   position: absolute;
-  right: 0;
+  @include right(0);
   transition: all 250ms ease-out;
   top: 0;
   @include placeholder();
@@ -9,15 +9,15 @@
     color: $input-focus-color;
   }
   &.animated {
-    transform: translate(0, rem(-16)) scale(0.9);
-    right: rem(-2);
+    transform: translate(0, rem(-20));
+    @include placeholder-focus();
   }
 }
 
 @media (min-width: em($desktop)) {
   .placeholder {
     &.animated {
-      transform: translate(0, rem(-20)) scale(0.9);
+      transform: translate(0, rem(-20));
     }
   }
 }

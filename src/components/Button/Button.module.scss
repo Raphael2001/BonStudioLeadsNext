@@ -1,27 +1,66 @@
 @import "src/styles/imports.scss";
+@import "./ButtonBasic.module.scss";
 .button {
-  font-size: rem(16);
-  padding: rem(8) rem(20);
-  color: white;
-  background-color: $main-color;
-  border-radius: rem(30);
-  transition: 200ms all ease-in;
+  gap: rem(8);
+
   font-family: $font;
-
-  &:hover,
-  &:active {
-    background-color: darken($main-color, 10%);
+  &.EXTRA_SMALL {
+    padding: rem(5) rem(10);
+    font-size: rem(14);
+    .icon {
+      width: rem(14);
+    }
   }
-}
-
-@media (min-width: em($tablet)) {
-  .button {
+  &.SMALL {
+    padding: rem(6) rem(16);
+    font-size: rem(16);
+    .icon {
+      width: rem(16);
+    }
+  }
+  &.MEDIUM {
+    padding: rem(6) rem(30);
     font-size: rem(18);
+    .icon {
+      width: rem(16);
+    }
+  }
+  &.LARGE {
+    padding: rem(6) rem(45);
+    font-size: rem(20);
+    .icon {
+      width: rem(18);
+    }
   }
 }
 
-@media (min-width: em($desktop)) {
-  .button {
-    font-size: rem(20);
+.icon-button {
+  &.EXTRA_SMALL {
+    width: rem(26);
+    height: rem(26);
+    .icon {
+      width: rem(14);
+    }
+  }
+  &.SMALL {
+    width: rem(30);
+    height: rem(30);
+    .icon {
+      width: rem(16);
+    }
+  }
+  &.MEDIUM {
+    width: rem(34);
+    height: rem(34);
+    .icon {
+      width: rem(18);
+    }
+  }
+  &.LARGE {
+    width: rem(38);
+    height: rem(38);
+    .icon {
+      width: rem(20);
+    }
   }
 }

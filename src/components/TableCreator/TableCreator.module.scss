@@ -3,15 +3,15 @@
   width: 85%;
   margin: 0 auto;
   border-radius: rem(16);
-  overflow: hidden;
-  background-color: #fafbff;
+
+  background-color: $cms-main-light-color;
 
   .header-wrapper {
     display: none;
   }
   .table-row-body-wrapper {
     &:nth-child(odd) {
-      background-color: #daecf7;
+      background-color: $cms-main-min-light-color;
     }
     .table-body-item {
       display: flex;
@@ -61,13 +61,16 @@
       padding-block: rem(5);
 
       &:nth-child(odd) {
-        background-color: #fafbff;
+        background-color: $cms-main-light-color;
       }
       &.header-wrapper {
-        background-color: #3faae4;
+        border-top-left-radius: rem(16);
+        border-top-right-radius: rem(16);
+
+        background-color: $cms-main-color;
 
         .table-header-item {
-          color: white;
+          color: $cms-basic-white;
           font-family: $font-medium;
           font-size: rem(18);
         }

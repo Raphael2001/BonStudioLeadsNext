@@ -11,7 +11,7 @@ type Props = {
 function ActionButtonIconText({ text, icon, onClick, color }: Props) {
   return (
     <button
-      className={`${styles["action-button-text"]} table-item ${color}`}
+      className={`${styles["action-button-text"]} item ${color}`}
       onClick={onClick}
     >
       <div className={styles["icon-wrapper"]}>

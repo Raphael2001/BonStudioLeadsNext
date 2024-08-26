@@ -12,7 +12,7 @@ type Props = {
 function ActionButtonText({ text, color, onClick }: Props) {
   return (
     <button
-      className={`${styles["action-button-text"]} table-item ${color}`}
+      className={`${styles["action-button-text"]} item ${color}`}
       onClick={onClick}
     >
       {text}

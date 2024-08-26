@@ -2,7 +2,11 @@ import { useAppSelector } from "./useRedux";
 import Api from "api/requests";
 import useNotificationsHandler from "./useNotificationsHandler";
 import { copy } from "utils/functions";
-import { GeneralInfo } from "utils/types/init";
+import {
+  GeneralInfo,
+  generalInfoItem,
+  generalInfoValue,
+} from "utils/types/init";
 
 export default function useGeneralInfo(name: string) {
   const { onSuccessNotification } = useNotificationsHandler();
@@ -15,19 +19,19 @@ export default function useGeneralInfo(name: string) {
 
   const multiValues = Array.isArray(generalInfoData.value);
 
-  function removeItemByIndex(index: number) {
-    const arr: Array<any> = copy(value);
-    // Check if the index is within the bounds of the array
-    if (index < 0 || index >= arr.length) {
-      return arr; // Return the original array if the index is out of bounds
+  const removeItemById = (id: string) => {
+    const payload = { name, id };
+    function onSuccess() {
+      onSuccessNotification();
     }
-
-    // Create a new array without the item at the specified index
-    return arr.slice(0, index).concat(arr.slice(index + 1));
-  }
+    Api.deleteGeneralInfoMultiValuesId({
+      payload,
+      onSuccess,
+    });
+  };
 
   function upsertGeneralInfo(
-    value: string | Array<any>,
+    value: generalInfoValue,
     callback = () => {},
     title = ""
   ) {
@@ -51,7 +55,7 @@ export default function useGeneralInfo(name: string) {
     value,
     inputType,
     cmsTitle,
-    removeItemByIndex: (index: number) => removeItemByIndex(index),
+    removeItemById,
     upsertGeneralInfo,
   };
 }

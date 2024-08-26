@@ -3,30 +3,29 @@
 import React from "react";
 
 import styles from "./LeadsForm.module.scss";
-import { Texts } from "utils/types/init";
 import FormCreator from "components/FormCreator/FormCreator";
 import { FormDataType } from "utils/types/form";
 import FORM_INPUTS_TYPES from "constants/form-inputs-types";
-import Button from "components/Button/Button";
 import Api from "api/requests";
 import usePopup from "utils/hooks/usePopup";
 import POPUP_TYPES from "constants/popup-types";
+import Button from "components/AppButton/Button";
+import useTranslate from "utils/hooks/useTranslate";
+import AppText from "components/AppText/AppText";
 
-type Props = {
-  texts: Texts;
-};
-
-function LeadsForm({ texts }: Props) {
+function LeadsForm() {
   const openPopup = usePopup();
+
+  const translate = useTranslate();
   function onSubmit(payload: any) {
     Api.sendLead({ payload, onSuccess });
 
     function onSuccess() {
       openPopup(POPUP_TYPES.LEAD_SENT_SUCCESS, {
-        title: texts.leadSentSuccess_title,
+        title: translate("leadSentSuccess_title").text,
         name: payload.fullname,
-        content: texts.leadSentSuccess_content,
-        btnText: texts.leadSentSuccess_btnText,
+        content: translate("leadSentSuccess_content").text,
+        btnText: translate("leadSentSuccess_btnText").text,
       });
     }
   }
@@ -47,16 +46,26 @@ function LeadsForm({ texts }: Props) {
         type: "tel",
       },
     ],
-    onSubmit: onSubmit,
-    buttonText: "שליחה",
   };
 
   return (
     <div className={styles["leads-form-wrapper"]} id="leads-form">
-      <h3 className={styles["title"]}>{texts.leadsForm_title}</h3>
-      <h6 className={styles["subtitle"]}>{texts.leadsForm_subtitle}</h6>
+      <AppText
+        className={styles["title"]}
+        value={translate("leadsForm_title")}
+      />
+      <AppText
+        className={styles["subtitle"]}
+        value={translate("leadsForm_subtitle")}
+      />
+
       <div className={styles["form"]}>
-        <FormCreator formData={formData} CustomButton={Button} />
+        <FormCreator
+          formData={formData}
+          CustomButton={Button}
+          onSubmit={onSubmit}
+          buttonText="שליחה"
+        />
       </div>
     </div>
   );

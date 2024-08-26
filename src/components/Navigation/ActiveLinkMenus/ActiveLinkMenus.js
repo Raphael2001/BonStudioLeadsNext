@@ -1,6 +1,6 @@
 "use client";
 
-import MenuItem from "components/CmsMenu/MenuItem/MenuItem";
+import MenuItem from "components/Cms/CmsMenu/MenuItem/MenuItem";
 import { React, useState } from "react";
 import ActiveLink from "../ActiveLink/ActiveLink";
 

@@ -15,3 +15,9 @@ export type GeneralOptionItem = {
 
 export type onKeyDownButton = KeyboardEvent<HTMLButtonElement>;
 export type onKeyDownInput = KeyboardEvent<HTMLInputElement>;
+
+export type optionColorType = {
+  color: string;
+  _id: string;
+  text: string;
+};

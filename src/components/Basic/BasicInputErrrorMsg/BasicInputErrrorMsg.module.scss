@@ -2,8 +2,9 @@
 .error-message {
   position: absolute;
   top: 100%;
-  right: 0;
+
   font-size: rem(12);
   color: $appleRed;
-  font-family: "arial";
+  font-family: $font;
+  @include right(0);
 }
