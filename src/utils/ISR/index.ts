@@ -21,6 +21,8 @@ const ISR = (function () {
   }
 
   async function getMetaTags(payload) {
+    await serverValidation();
+
     const res = await ApiServer.metaTags({ payload });
     const json = await res.json();
     const body = json.body;
