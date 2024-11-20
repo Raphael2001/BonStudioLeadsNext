@@ -12,6 +12,7 @@ import POPUP_TYPES from "constants/popup-types";
 import CMS_MODULES from "constants/CMSModules";
 import usePermission from "utils/hooks/usePermission";
 import { useAppSelector } from "utils/hooks/useRedux";
+import RevalidateButton from "components/Cms/RevalidateButton/RevalidateButton";
 export default function GeneralPage() {
   const generalInfo = useAppSelector((store) => store.init?.generalInfo);
   const openPopup = usePopup();
@@ -31,6 +32,7 @@ export default function GeneralPage() {
         Object.values(generalInfo).map((param) => {
           return <GeneralRow key={param._id} name={param.name} />;
         })}
+      <RevalidateButton />
     </div>
   );
 }
